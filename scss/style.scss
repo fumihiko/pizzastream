@@ -1,0 +1,259 @@
+@font-face {
+    font-family: 'AvenirNext';
+    src: url('../fonts/AvenirNext-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/AvenirNext-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/AvenirNext-Regular.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/AvenirNext-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/AvenirNext-Regular.svg#AvenirNext') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'AvenirNext-Medium' ;
+    src: url('../fonts/AvenirNext-Medium.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/AvenirNext-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/AvenirNext-Medium.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/AvenirNext-Medium.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/AvenirNext-Medium.svg#AvenirNext-Medium') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'AvenirNext-Demi' ;
+    src: url('../fonts/AvenirNext-DemiBold.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/AvenirNext-DemiBold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/AvenirNext-DemiBold.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/AvenirNext-DemiBold.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/AvenirNext-DemiBold.svg#AvenirNext-Demi') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+
+
+* {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+
+}
+
+body {
+	
+	width: 100%;
+	height: 100%;
+	
+	// background:#DA593F url(../img/background.svg) repeat center center/75px auto ;
+	color: #565554;
+	font-family: 'AvenirNext', sans-serif;
+	font-weight: normal;
+}
+#pattern-output {
+	fill: #DA593F;
+
+}
+svg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	background: #DA593F;
+}
+.container {
+	position: relative;
+	z-index: 1;
+	max-width: 960px;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	text-align: center;
+	display: grid;
+
+	> header {
+		background: #F6F5AE;
+	}
+}
+
+.logo {
+	display: block;
+	width: 127px;
+	height: 107px;
+	background:	url(../img/logo.png) no-repeat center center/ 127px auto  ;
+	margin:22px auto 21px;
+}
+
+main {
+	background: #FFFFFF;
+	min-height: calc(100vh - 150px);
+	header {
+		padding: 50px 16px 39px;
+	}
+}
+
+h1 {
+	font-family: 'AvenirNext-Demi', sans-serif;
+	font-size: 40px;
+	line-height: 55px;
+	margin-bottom: 15px;
+	font-weight: normal;
+}
+
+h2 {
+	font-family: 'AvenirNext-Medium', sans-serif;
+	font-size: 30px;
+	line-height: 41px;
+	font-weight: normal;
+	time {
+		display: block;
+		font-size: 50px;
+		line-height: 68px;
+		font-family: 'AvenirNext-Demi', sans-serif;
+		margin-bottom: 17px;
+	}
+}
+
+ol {
+	display: flex;
+	list-style: none; 
+	counter-reset: li;
+
+	li {
+		flex: 1;
+		counter-increment: li;
+		display: flex;
+		flex-direction: column;
+		font-family: 'AvenirNext-Demi', sans-serif;
+		font-size: 20px;
+		line-height: 35px;
+		border-right: 1px solid #D8D8D8;
+		height: 469px;
+		&.active {
+			&::before {
+				background: #2E86AB;
+				opacity: 1;
+			}
+			i {
+				background-color: #2E86AB;
+				opacity: 1;
+
+			}
+			small {
+				opacity: 1;
+			}
+			 + li {
+				&::before {
+					opacity: 0.5;
+					background-color: #D8D8D8;
+				}
+				i {
+					opacity: 0.5;
+					background-color: #D8D8D8;
+				}
+				+ li {
+					&::before {
+						opacity: 0.5;
+						background-color: #D8D8D8;
+					}
+					i {
+						opacity: 0.5;
+						background-color: #D8D8D8;
+					}
+				}
+			}
+		} 
+		&.complete {
+			&::before {
+				background: #2E86AB;
+				
+			}
+			i {
+				background-color: #2E86AB;
+				
+			}
+		}
+		&:last-child {
+			border: 0;
+		}
+		&:first-child {
+			i {
+				margin-bottom: 26px;
+			}
+
+		}
+
+		&::before {
+			content: counter(li);
+			background: #D8D8D8;
+			color: #FFFFFF;
+			font-size: 30px;
+			line-height: 41px;
+			padding: 5px 0 4px;
+			mix-blend-mode: normal;
+			opacity: 0.5;
+			margin-bottom: 20px;
+			height: 41px;
+
+		}
+	}
+}
+i {
+	background-color: #D8D8D8;
+	mix-blend-mode: normal;
+	opacity: 0.5;
+	width: 200px;
+	height: 200px;
+	margin: 20px auto 24px;
+	background-repeat: no-repeat;
+	border-radius: 4px;
+	background-position: center center;
+	&.processing {
+		background-image: url(../img/process_icon.png);
+	}
+	&.making {
+		background-image: url(../img/make_icon.png);
+	}
+	&.delivering {
+		background-image: url(../img/deliver_icon.png);
+	}
+	
+}
+
+
+small {
+	font-family: 'AvenirNext', sans-serif;
+	mix-blend-mode: normal;
+	opacity: 0.5;
+	font-size: 20px;
+	line-height: 23px;
+}
+
+progress {
+	appearance: none;
+	width: 100%;
+	height: 50px;
+	margin-bottom: 30px;
+	//background:url(../img/loading.gif) repeat-x top center / cover transparent;
+
+}
+
+progress[value] {
+  background:url(../img/loading.gif) repeat-x top center / cover transparent;
+}
+progress[value]::-webkit-progress-value {
+
+  background:url(../img/loading.gif) repeat-x top center / cover transparent;
+}
+
+progress:not([value]) {
+ 
+  background:url(../img/loading.gif) repeat-x top center / cover transparent;
+}
